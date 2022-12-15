@@ -2,7 +2,7 @@ const { white, green } = require("chalk");
 const { readdirSync } = require('fs');
 
 module.exports = async (client) => {
-    readdirSync("./Commands/").map(async dir => {
+    readdirSync("./commands/").map(async dir => {
         const commands = readdirSync(`./commands/${dir}/`).map(async (cmd) => {
             const pull = require(`../commands/${dir}/${cmd}`)
             client.slash.set(pull.name, pull);
