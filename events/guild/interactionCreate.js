@@ -19,7 +19,7 @@ module.exports = async(client, interaction) => {
         await client.Roulette(interaction.guild.id)
         await client.Coinflip(interaction.guild.id)
 
-        if (!client.dev.includes(interaction.user.id) && client.dev.length > 0) { 
+        if (!client.developers.includes(interaction.user.id) && client.developers.length > 0) { 
             interaction.reply(`You are not allowed to use this command.`); 
             return;
         }
