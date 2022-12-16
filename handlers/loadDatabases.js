@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const { MONGO_URI } = require('../settings/config.js');
 const { white, green } = require('chalk');
 
+mongoose.set('strictQuery', false);
+
 module.exports = async () => {
     try {
         await mongoose.connect(MONGO_URI);
