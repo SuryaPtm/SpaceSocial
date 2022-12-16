@@ -3,7 +3,7 @@ const Roulette = require("../../settings/models/roulette.js")
 const { betSave, revMoney, getNumber, payoutWinners, sendMsg } = require("../../structures/Roulette.js")
 const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
 const config = require("../../settings/default.js");
-const delay = require("delay");
+const delay = require("node:timers/promises").setTimeout;
 
 module.exports = { 
     name: "roulette",

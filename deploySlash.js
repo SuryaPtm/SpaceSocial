@@ -2,8 +2,7 @@ const { plsParseArgs } = require('plsargs');
 const args = plsParseArgs(process.argv.slice(2));
 const path = require("path");
 const { TOKEN } = require("./settings/config.js");
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
+const { REST, Routes } = require('discord.js');
 const { readdirSync } = require('fs');
 
 (async () => {
@@ -28,10 +27,9 @@ const { readdirSync } = require('fs');
             })
         })
 
-        const rest = new REST({ version: "9" }).setToken(TOKEN);
+        const rest = new REST({ version: 10 }).setToken(TOKEN);
 
         console.info("Retrieving account information!");
-        /** @type {import("discord-api-types/rest/v9/user").RESTGetAPIUserResult} */
 
         const client = await rest.get(Routes.user());
         console.info(`Account information received! ${client.username}#${client.discriminator} (${client.id})`);

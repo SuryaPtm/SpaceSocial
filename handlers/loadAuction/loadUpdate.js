@@ -1,7 +1,7 @@
 const { Client, EmbedBuilder } = require("discord.js");
 const DarkAuction = require("../../settings/models/darkauction.js");
 const Member = require("../../settings/models/member.js");
-const delay = require("delay");
+const delay = require("node:timers/promises").setTimeout;
 const config = require("../../settings/default.js");
 
   /**

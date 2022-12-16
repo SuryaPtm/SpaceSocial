@@ -3,7 +3,7 @@ const Coinflip = require("../../settings/models/coinflip.js")
 const { betSave, revMoney, getResult, payoutWinners, sendMsg } = require("../../structures/Coinflip.js")
 const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
 const config = require("../../settings/default.js");
-const delay = require("delay");
+const delay = require("node:timers/promises").setTimeout;
 
 module.exports = { 
     name: "coinflip",
